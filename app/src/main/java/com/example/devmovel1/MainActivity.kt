@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.example.itemslosts.ui.fragments.LostsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.devmovel1.R
+import com.example.itemslosts.ui.fragments.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +27,11 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(LostsFragment())
                     true
                 }
-                // Adicione aqui outros fragmentos para outras opções de navegação
+                R.id.procurarFragment -> {
+                    loadFragment(SearchFragment())
+                    true
+                }
+                // Adicione outros fragmentos para outras opções de navegação, se houver
                 else -> false
             }
         }
