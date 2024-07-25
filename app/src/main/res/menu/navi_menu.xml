@@ -5,4 +5,7 @@
     <item android:id="@+id/procurarFragment"
         android:title="Procurar"
         android:icon="@drawable/ic_launcher_background" />
+    <item android:id="@+id/account_data"
+        android:title="Perfil"
+        android:icon="@drawable/baseline_person_4_24" />
 </menu>

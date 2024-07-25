@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import com.example.itemslosts.ui.fragments.LostsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.devmovel1.R
+import com.example.devmovel1.itemslosts.ui.fragments.AccountFragment
 import com.example.itemslosts.ui.fragments.SearchFragment
 
-class MainActivity : AppCompatActivity() {
+class
+MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.procurarFragment -> {
                     loadFragment(SearchFragment())
+                    true
+                }
+                R.id.account_data -> {
+                    loadFragment(AccountFragment())
                     true
                 }
                 // Adicione outros fragmentos para outras opções de navegação, se houver
