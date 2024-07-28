@@ -45,8 +45,8 @@ class SearchFragment : Fragment() {
     private fun loadLostItems(adapter: LostItemAdapter) {
         // Aqui você pode carregar dados reais. Exemplo estático para demonstração.
         lostItems.addAll(listOf(
-            LostItem("Título 1", "Descrição 1", "Contato 1", "01/01/2024", R.drawable.baseline_person_4_24),
-            LostItem("Título 2", "Descrição 2", "Contato 2", "02/01/2024", R.drawable.ic_launcher_foreground)
+            LostItem("Título 1", "Descrição 1", "Contato 1", "01/01/2024"),
+            LostItem("Título 2", "Descrição 2", "Contato 2", "02/01/2024")
         ))
         adapter.notifyDataSetChanged()
         progressBar.visibility = View.GONE

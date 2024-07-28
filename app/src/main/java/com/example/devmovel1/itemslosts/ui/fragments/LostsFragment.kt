@@ -1,55 +1,72 @@
 package com.example.itemslosts.ui.fragments
 
-
-import com.example.devmovel1.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.devmovel1.databinding.FragmentLostsBinding
 import com.example.devmovel1.itemslosts.adapters.LostItemAdapter
+import com.example.devmovel1.itemslosts.services.RetrofitInstance
 import com.example.itemslosts.models.LostItem
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import java.io.IOException
 
 class LostsFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var progressBar: ProgressBar
+    private var _binding: FragmentLostsBinding? = null
+    private val binding get() = _binding!!
     private val lostItems = mutableListOf<LostItem>() // Lista de itens perdidos
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Infla o layout do fragmento
-        return inflater.inflate(R.layout.fragment_losts, container, false)
+        _binding = FragmentLostsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = view.findViewById(R.id.recyclerHeadlines)
-        progressBar = view.findViewById(R.id.paginationProgressBar)
-
         // Configura o RecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerHeadlines.layoutManager = LinearLayoutManager(requireContext())
         val adapter = LostItemAdapter(lostItems)
-        recyclerView.adapter = adapter
+        binding.recyclerHeadlines.adapter = adapter
 
         // Carrega os dados e atualiza o RecyclerView
         loadLostItems(adapter)
     }
 
     private fun loadLostItems(adapter: LostItemAdapter) {
-        // Aqui você pode carregar dados reais. Exemplo estático para demonstração.
-        lostItems.addAll(listOf(
-            LostItem("Título 1", "Descrição 1", "Contato 1", "01/01/2024", R.drawable.baseline_person_4_24),
-            LostItem("Título 2", "Descrição 2", "Contato 2", "02/01/2024", R.drawable.ic_launcher_foreground)
-        ))
-        adapter.notifyDataSetChanged()
-        progressBar.visibility = View.GONE
+        lifecycleScope.launch {
+            binding.paginationProgressBar.visibility = View.VISIBLE
+            val response = try {
+                RetrofitInstance.api.getLostItems()
+            } catch (e: IOException) {
+                e.printStackTrace()
+                binding.paginationProgressBar.visibility = View.GONE
+                return@launch
+            } catch (e: HttpException) {
+                e.printStackTrace()
+                binding.paginationProgressBar.visibility = View.GONE
+                return@launch
+            }
+
+            if (response.isSuccessful && response.body() != null) {
+                lostItems.clear()
+                lostItems.addAll(response.body()!!)
+                adapter.notifyDataSetChanged()
+                binding.paginationProgressBar.visibility = View.GONE
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
