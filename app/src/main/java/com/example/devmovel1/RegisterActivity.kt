@@ -14,28 +14,26 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_login)
+        setContentView(R.layout.fragment_register)
 
-        val btnLogin: Button = findViewById(R.id.btnLogin)
+        val btnCadastrar: Button = findViewById(R.id.btnCadastrar)
 
-        btnLogin.setOnClickListener { onLogin() }
+        btnCadastrar.setOnClickListener { onRegister() }
 
-        val btnGoToRegister: Button = findViewById(R.id.btnGoToRegister)
-        btnGoToRegister.setOnClickListener { goToRegister() }
+        val btnGoToLogin: Button = findViewById(R.id.btnGoToLogin)
+        btnGoToLogin.setOnClickListener { goToLogin() }
     }
 
-    private fun goToRegister() {
-//        Toast.makeText(applicationContext, "Teste 1", Toast.LENGTH_SHORT).show()
-        val intent = Intent(this, RegisterActivity::class.java)
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//        finish()
+    private fun goToLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        finish()
         startActivity(intent)
     }
-
-    private fun onLogin() {
+    private fun onRegister() {
         val txtRA: String = findViewById<EditText>(R.id.registerRA).text.toString()
         val txtPassword: String = findViewById<EditText>(R.id.registerPassword).text.toString()
         val userData = User(txtRA, txtPassword)
@@ -50,13 +48,13 @@ class LoginActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = RetrofitInstance.auth.login(userData)
+                val response = RetrofitInstance.auth.register(userData)
                 withContext(Dispatchers.Main) {
                     if (response.isSuccessful && response.body() != null) {
                         finish()
                         startActivity(intent)
                     } else {
-                        Toast.makeText(applicationContext, "RA ou senha inválidos", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "Aconteceu algum problema! Tente novamente mais tarde.", Toast.LENGTH_SHORT).show()
                     }
                 }
             } catch (e: Exception) {
