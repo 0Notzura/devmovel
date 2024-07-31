@@ -29,7 +29,6 @@ class LostItemAdapter(private val lostItems: List<LostItem>) :
             binding.lostSource.text = lostItem.contact
             binding.lostTitle.text = lostItem.title
             binding.lostDescription.text = lostItem.description
-            binding.lostDateTime.text = "Some date" // Ajuste conforme necessário
         }
     }
 }
