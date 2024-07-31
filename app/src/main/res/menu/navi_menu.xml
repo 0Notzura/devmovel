@@ -2,7 +2,11 @@
     <item android:id="@+id/navigation_losts"
         android:title="Todos"
         android:icon="@drawable/ic_launcher_foreground" />
-    <item android:id="@+id/procurarFragment"
+    <item android:id="@+id/fragment_search"
         android:title="Procurar"
+        android:icon="@drawable/ic_launcher_background" />
+    <item
+        android:id="@+id/navigation_create_post"
+        android:title="Criar Post"
         android:icon="@drawable/ic_launcher_background" />
 </menu>

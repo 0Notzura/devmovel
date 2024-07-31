@@ -3,10 +3,10 @@ package com.example.devmovel1
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.devmovel1.itemslosts.ui.fragments.CreatePostFragment
 import com.example.itemslosts.ui.fragments.LostsFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.example.devmovel1.R
 import com.example.itemslosts.ui.fragments.SearchFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,11 +27,14 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(LostsFragment())
                     true
                 }
-                R.id.procurarFragment -> {
+                R.id.fragment_search -> { // Certifique-se de que o ID aqui corresponde ao do menu
                     loadFragment(SearchFragment())
                     true
                 }
-                // Adicione outros fragmentos para outras opções de navegação, se houver
+                R.id.navigation_create_post -> {
+                    loadFragment(CreatePostFragment())
+                    true
+                }
                 else -> false
             }
         }
