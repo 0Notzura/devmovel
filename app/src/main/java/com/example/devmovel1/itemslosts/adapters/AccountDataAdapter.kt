@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.devmovel1.R
 import com.example.devmovel1.itemslosts.models.AccountData
-import com.example.itemslosts.models.LostItem
 
 //class AccountDataAdapter (private val accountsData: List<AccountData>) : RecyclerView.Adapter<AccountDataAdapter.AccountDataViewHolder>() {
 class AccountDataAdapter (private val accountsData: AccountData) : RecyclerView.Adapter<AccountDataAdapter.AccountDataViewHolder>() {
