@@ -64,7 +64,7 @@ class SearchFragment : Fragment() {
         progressBar.visibility = View.VISIBLE
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = RetrofitInstance.api.searchLostItems(query)
+                val response = RetrofitInstance.posts.searchLostItems(query)
                 withContext(Dispatchers.Main) {
                     if (response.isSuccessful && response.body() != null) {
                         lostItems.clear()

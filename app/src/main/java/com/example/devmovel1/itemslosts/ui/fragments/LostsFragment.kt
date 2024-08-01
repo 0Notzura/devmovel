@@ -45,7 +45,7 @@ class LostsFragment : Fragment() {
         lifecycleScope.launch {
             binding.paginationProgressBar.visibility = View.VISIBLE
             val response = try {
-                RetrofitInstance.api.getLostItems()
+                RetrofitInstance.posts.getLostItems()
             } catch (e: IOException) {
                 e.printStackTrace()
                 binding.paginationProgressBar.visibility = View.GONE
