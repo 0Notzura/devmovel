@@ -1,12 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/navigation_losts"
-        android:title="Todos"
+        android:title="@string/str_all"
         android:icon="@drawable/ic_launcher_foreground" />
     <item android:id="@+id/fragment_search"
-        android:title="Procurar"
+        android:title="@string/str_search"
         android:icon="@drawable/ic_launcher_background" />
     <item
         android:id="@+id/navigation_create_post"
-        android:title="Criar Post"
+        android:title="@string/str_create"
         android:icon="@drawable/ic_launcher_background" />
 </menu>
