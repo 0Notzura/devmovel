@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.devmovel1.R
 import com.example.devmovel1.itemslosts.services.PostsService
+import com.example.devmovel1.itemslosts.services.SessionManager
 import com.example.itemslosts.models.LostItem
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +18,9 @@ import retrofit2.Response
 
 class CreatePostFragment : Fragment() {
 
-    private val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhYTgxN2IwNDUyZDBjOWY4NTZiZmM1In0sImlhdCI6MTcyMjQ1MDMwMCwiZXhwIjoxNzIyNDUzOTAwfQ.V4oECCtn4y33I3PPknNCVXum8Uvfodm8h9pk6np7fG4"
+    private lateinit var sessionManager: SessionManager
+    private var token = ""
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +31,8 @@ class CreatePostFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sessionManager = SessionManager(requireContext())
+        token = sessionManager.fetchToken().toString()
 
         val editTextTitle: EditText = view.findViewById(R.id.editTextTitle)
         val editTextDescription: EditText = view.findViewById(R.id.editTextDescription)
@@ -60,7 +65,7 @@ class CreatePostFragment : Fragment() {
                 if (response.isSuccessful) {
                     Toast.makeText(requireContext(), "Post created successfully", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(requireContext(), "Failed to create post", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), response.toString(), Toast.LENGTH_SHORT).show()
                 }
             }
 
