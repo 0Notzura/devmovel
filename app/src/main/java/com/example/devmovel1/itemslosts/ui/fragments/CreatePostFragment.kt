@@ -65,7 +65,7 @@ class CreatePostFragment : Fragment() {
                 if (response.isSuccessful) {
                     Toast.makeText(requireContext(), "Post created successfully", Toast.LENGTH_SHORT).show()
                 } else {
-                    Toast.makeText(requireContext(), response.toString(), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Failed to create post", Toast.LENGTH_SHORT).show()
                 }
             }
 
