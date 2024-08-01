@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_login">Login</string>
+    <string name="str_sign_up">Cadastrar</string>
+    <string name="str_password">Senha</string>
+    <string name="str_all">Todos</string>
+    <string name="str_search">Procurar</string>
+    <string name="str_create">Criar post</string>
+    <string name="str_all_items">Todos os itens</string>
+    <string name="str_search_items">Procurar itens</string>
+    <string name="str_title">Título</string>
+    <string name="str_description">Descrição</string>
+    <string name="str_contact">Contato</string>
+    <string name="str_image_url">URL da Imagem</string>
+    <string name="str_submit">Enviar</string>
+    <string name="str_have_account">Já possui uma conta?</string>
+    <string name="str_no_account">Deseja criar uma conta?</string>
+    <string name="str_lost_found">Achados e Perdidos</string>
+</resources>

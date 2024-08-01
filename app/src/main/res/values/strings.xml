@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Devmovel1</string>
+    <string name="str_app_name" translatable="false">Devmovel1</string>
+    <string name="str_login">Login</string>
+    <string name="str_sign_up">Sign up</string>
+    <string name="str_password">Password</string>
+    <string name="str_ra" translatable="false">RA</string>
+    <string name="str_all">All</string>
+    <string name="str_search">Search</string>
+    <string name="str_create">Create post</string>
+    <string name="str_all_items">All items</string>
+    <string name="str_search_items">Search items</string>
+    <string name="str_title">Title</string>
+    <string name="str_description">Description</string>
+    <string name="str_contact">Contact</string>
+    <string name="str_image_url">Image URL</string>
+    <string name="str_submit">Submit</string>
+    <string name="str_have_account">Already have an account?</string>
+    <string name="str_no_account">Submit</string>
+    <string name="str_lost_found">Lost and Found</string>
 </resources>
