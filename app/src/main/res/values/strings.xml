@@ -15,7 +15,7 @@
     <string name="str_image_url">Image URL</string>
     <string name="str_submit">Submit</string>
     <string name="str_have_account">Already have an account?</string>
-    <string name="str_no_account">Submit</string>
+    <string name="str_no_account">Want to create an account?</string>
     <string name="str_lost_found">Lost and Found</string>
     <string name="str_account_page">Account</string>
     <string name="str_account_posts">User\'s posts</string>
