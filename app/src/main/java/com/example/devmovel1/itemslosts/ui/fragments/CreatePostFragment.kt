@@ -20,6 +20,7 @@ class CreatePostFragment : Fragment() {
 
     private lateinit var sessionManager: SessionManager
     private var token = ""
+  
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
