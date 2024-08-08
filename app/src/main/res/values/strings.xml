@@ -17,4 +17,13 @@
     <string name="str_have_account">Already have an account?</string>
     <string name="str_no_account">Want to create an account?</string>
     <string name="str_lost_found">Lost and Found</string>
+    <string name="str_account_page">Account</string>
+    <string name="str_account_posts">User\'s posts</string>
+    <string name="str_name">Name</string>
+    <string name="str_email">Email</string>
+    <string name="str_phone_number">Phone number</string>
+    <string name="str_photo_url">Photo\'s URL</string>
+    <string name="str_NAME">NAME</string>
+    <string name="str_EMAIL">EMAIL</string>
+    <string name="str_PHONE_NUMBER">PHONE NUMBER</string>
 </resources>

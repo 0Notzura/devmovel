@@ -16,9 +16,8 @@
         android:text="@string/str_sign_up"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/registerPhotoUrl" />
 
     <Button
         android:id="@+id/btnGoToLogin"
@@ -38,7 +37,7 @@
         android:id="@+id/registerRA"
         android:layout_width="224dp"
         android:layout_height="48dp"
-        android:layout_marginTop="219dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="@string/str_ra"
         android:inputType="text"
@@ -64,7 +63,7 @@
         android:id="@+id/registerPassword"
         android:layout_width="224dp"
         android:layout_height="48dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/str_password"
         android:inputType="textPassword"
@@ -72,5 +71,53 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerRA" />
+
+    <EditText
+        android:id="@+id/registerName"
+        android:layout_width="224dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/str_name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerPassword" />
+
+    <EditText
+        android:id="@+id/registerEmail"
+        android:layout_width="224dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/str_email"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerName" />
+
+    <EditText
+        android:id="@+id/registerPhoneNumber"
+        android:layout_width="224dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/str_phone_number"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerEmail" />
+
+    <EditText
+        android:id="@+id/registerPhotoUrl"
+        android:layout_width="224dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/str_photo_url"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerPhoneNumber" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

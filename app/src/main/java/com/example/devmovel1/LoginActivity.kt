@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                val response = RetrofitInstance.auth.login(userData)
+                val response = RetrofitInstance.auth2.login(userData)
                 withContext(Dispatchers.Main) {
                     if (response.isSuccessful && response.body() != null) {
                         sessionManager.saveToken(response.body()!!.authToken)

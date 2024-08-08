@@ -16,4 +16,13 @@
     <string name="str_have_account">Já possui uma conta?</string>
     <string name="str_no_account">Deseja criar uma conta?</string>
     <string name="str_lost_found">Achados e Perdidos</string>
+    <string name="str_account_page">Perfil</string>
+    <string name="str_account_posts">Postagens do usuário</string>
+    <string name="str_name">Nome</string>
+    <string name="str_email">Email</string>
+    <string name="str_phone_number">Telefone</string>
+    <string name="str_photo_url">URL da foto</string>
+    <string name="str_NAME">NOME</string>
+    <string name="str_EMAIL">EMAIL</string>
+    <string name="str_PHONE_NUMBER">TELEFONE</string>
 </resources>

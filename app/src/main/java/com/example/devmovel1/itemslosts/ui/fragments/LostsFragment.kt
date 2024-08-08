@@ -25,6 +25,7 @@ class LostsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = FragmentLostsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -59,6 +60,7 @@ class LostsFragment : Fragment() {
             if (response.isSuccessful && response.body() != null) {
                 lostItems.clear()
                 lostItems.addAll(response.body()!!)
+//                adapter.updateData(lostItems)
                 adapter.notifyDataSetChanged()
                 binding.paginationProgressBar.visibility = View.GONE
             }

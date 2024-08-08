@@ -9,4 +9,8 @@
         android:id="@+id/navigation_create_post"
         android:title="@string/str_create"
         android:icon="@drawable/ic_launcher_add" />
+    <item
+        android:id="@+id/navigation_account_page"
+        android:title="@string/str_account_page"
+        android:icon="@drawable/baseline_person_4_24" />
 </menu>
