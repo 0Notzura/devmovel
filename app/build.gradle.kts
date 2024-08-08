@@ -60,4 +60,7 @@ dependencies {
 
     implementation("androidx.databinding:databinding-runtime:7.1.0") // Adicione esta linha
 
+    implementation("com.auth0:java-jwt:4.0.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.3")
 }

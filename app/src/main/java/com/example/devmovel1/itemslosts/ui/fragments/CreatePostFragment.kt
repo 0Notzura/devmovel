@@ -17,7 +17,7 @@ import retrofit2.Response
 
 class CreatePostFragment : Fragment() {
 
-    private val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhYTgxN2IwNDUyZDBjOWY4NTZiZmM1In0sImlhdCI6MTcyMjQ1MDMwMCwiZXhwIjoxNzIyNDUzOTAwfQ.V4oECCtn4y33I3PPknNCVXum8Uvfodm8h9pk6np7fG4"
+    private val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhYTgxN2IwNDUyZDBjOWY4NTZiZmM1In0sImlhdCI6MTcyMjUxNDQ0NSwiZXhwIjoxNzIyNTE4MDQ1fQ.sfQrOVKZWEiYfVAO3-6uTkFRUmwjhZeYGj4yGWJdAb0"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
